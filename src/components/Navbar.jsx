@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 
 
 const NavbarCom = ({ handleShow }) => {
-  const cardLength = useSelector((state) => state.card)
+  const cardLength = useSelector((state) => state.card.cardItems)
   return (
     <Navbar style={{ backgroundColor: "#F2F2F2" }} fixed="top" expand="lg">
       <Container>

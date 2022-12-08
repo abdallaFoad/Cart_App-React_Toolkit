@@ -7,7 +7,7 @@ import { BsX } from "react-icons/bs";
 import { clearCard, removeFromCard } from "../rtk/cardSlice";
 
 const ShoppingCard = ({ handleClose, show }) => {
-  const products = useSelector((state) => state.card);
+  const products = useSelector((state) => state.card.cardItems);
   const dispatch = useDispatch();
   const totalPrice = products.reduce((acc, product) => {
     acc += product.price * product.quantity;
@@ -24,7 +24,7 @@ const ShoppingCard = ({ handleClose, show }) => {
         <Row>
           {products.map((pro) => {
             return (
-              <div className="cardShop">
+              <div className="cardShop" key={pro.id}>
                 <div className="img">
                   <img src={pro.image} alt="imageProduct" />
                 </div>

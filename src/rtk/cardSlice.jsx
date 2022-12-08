@@ -1,26 +1,47 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const items = localStorage.getItem("cardItem")
+  ? JSON.parse(localStorage.getItem("cardItem"))
+  : [];
 
-export const cardSlice = createSlice({
-  name: 'cardSlice',
-  initialState: [],
+const initialState = {
+  cardItems: items || [],
+};
+
+const cardSlice = createSlice({
+  name: "cardSlice",
+  initialState,
   reducers: {
     addToCard: (state, action) => {
-      const find = state.find((p) => p.id === action.payload.id);
-      if (find) {
-        find.quantity += 1;
+      const existItem = state.cardItems.find(
+        (item) => item.id === action.payload.id
+      );
+
+      if (existItem) {
+        existItem.quantity += 1;
       } else {
         const addQuantity = { ...action.payload, quantity: 1 };
-        state.push(addQuantity);
+        state.cardItems.push(addQuantity);
+      }
+
+      localStorage.setItem("cardItem", JSON.stringify(state.cardItems));
+    },
+
+    removeFromCard: (state, action) => {
+      const existItem = state.cardItems.find(
+        (item) => item.id === action.payload.id
+      );
+      if (existItem) {
+        state.cardItems = state.cardItems.filter(
+          (e) => e.id !== action.payload.id
+        );
       }
     },
-    removeFromCard: (state, action) => {
-      return state.filter((e) => e.id !== action.payload.id)
-     },
     clearCard: (state, action) => {
-      return [];
-     },
-  }
+      return localStorage.clear('cardItem');
+      // return state.cardItems = [];
+    },
+  },
 });
 
 export const { addToCard, removeFromCard, clearCard } = cardSlice.actions;
