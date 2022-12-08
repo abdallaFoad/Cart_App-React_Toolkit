@@ -1,0 +1,100 @@
+.row {
+}
+.offcanvas-title{
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  font-size:2rem !important;
+}
+.cardShop {
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+  display: flex;
+  flex-direction: row !important;
+  gap: 10px !important;
+  padding: 1rem 0;
+  font-size: 0.8rem;
+  text-align: center;
+
+}
+
+.cardShop .title {
+  color: #4f4f4f;
+  font-size: 1.1rem;
+}
+.cardShop .img {
+}
+.cardShop .img img {
+  width: 3rem;
+  height: 3rem;
+}
+.cardShop .num {
+  background-color: #ccc;
+  color: #f60c02;
+  font-size: 1.1rem;
+  font-weight: 700;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.cardShop .price {
+  color: #4f4f4f;
+  font-size: 1.1rem;
+}
+.cardShop .price span {
+  font-weight: bold;
+}
+.cardShop .x {
+  width: 20px;
+  height: 20px;
+  background-color: #dd0b02;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.cardShop .x:hover {
+  background-color: #f60c02;
+}
+.cardShop .x svg {
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: bolder;
+  color: white;
+}
+.total {
+  border-top: #4f4f4f;
+  padding: 2rem 0;
+  color: #4f4f4f;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.total span {
+  font-weight: bold;
+  color: #f60c02;
+  margin-left: 1rem;
+}
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.btns button {
+  background-color: #2e2929;
+  text-transform: uppercase !important;
+  font-size: 1.2rem;
+  width: fit-content !important;
+  padding: 0.6rem 1.2rem !important;
+  margin: 1rem auto !important;
+  border: none;
+  color: white;
+  font-weight: 600;
+  transition: all 0.4s;
+}
+
+.btns button:hover {
+  background-color: #2e2929f5;
+}
